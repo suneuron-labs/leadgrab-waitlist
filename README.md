@@ -1,6 +1,10 @@
-# WA LeadGrab — Fake-Door Landing Page
+# WA LeadGrab — Waitlist Landing Page
 
-Temporary validation landing page for WA LeadGrab. Lives in `temp/landing/` so the whole folder can be deleted after demand validation.
+Standalone Next.js waitlist / fake-door landing page for WA LeadGrab demand validation.
+
+**Repo:** [suneuron-labs/leadgrab-waitlist](https://github.com/suneuron-labs/leadgrab-waitlist)
+
+When the real product launches, borrow the design from this repo into the product app. See `.cursor/rules/product-landing-handoff/` for the handoff manifest and agent instructions.
 
 ## Prerequisites
 
@@ -12,7 +16,6 @@ Temporary validation landing page for WA LeadGrab. Lives in `temp/landing/` so t
 1. Install dependencies:
 
 ```bash
-cd temp/landing
 npm install
 ```
 
@@ -45,11 +48,10 @@ npm start
 
 ## Deploy (Vercel)
 
-1. Push `temp/landing/` to a repo or deploy as a subdirectory
-2. Import project in [Vercel](https://vercel.com)
-3. Set root directory to `temp/landing` if using monorepo
-4. Add env vars: `WEB3FORMS_ACCESS_KEY`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`
-5. Deploy
+1. Import [leadgrab-waitlist](https://github.com/suneuron-labs/leadgrab-waitlist) in [Vercel](https://vercel.com)
+2. Root directory: `.` (default — Next.js auto-detected)
+3. Environment variables: `WEB3FORMS_ACCESS_KEY`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`
+4. Deploy
 
 Web3Forms works from the browser on production. Resend requires a verified domain.
 
@@ -64,18 +66,16 @@ Web3Forms works from the browser on production. Resend requires a verified domai
 
 All CTAs open the private-beta waitlist modal → Web3Forms (lead to you) + Resend (confirmation to user).
 
-## Teardown
+## Design handoff
 
-When validation is complete, delete the entire folder:
+Copy and design tokens for the future product landing page live in `.cursor/rules/product-landing-handoff/`. Tag a stable design snapshot before major visual changes:
 
 ```bash
-rm -rf temp/landing
+git tag design-v1
+git push origin design-v1
 ```
-
-No other repo files depend on this app.
 
 ## Notes
 
 - Copy lives in `lib/copy.ts`
-- Project rules in `.cursor/rules/` at repo root
-- Chrome extension code is separate (not in this folder)
+- Chrome extension / product app is a separate repo (not this one)

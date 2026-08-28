@@ -15,8 +15,10 @@ out/
 # production
 build/
 
-# cursor (local IDE/agent config — not for remote)
-.cursor/
+# cursor — commit rules only; keep specs/plans local
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 
 # misc
 .DS_Store
