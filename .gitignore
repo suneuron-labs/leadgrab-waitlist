@@ -15,6 +15,9 @@ out/
 # production
 build/
 
+# cursor (local IDE/agent config — not for remote)
+.cursor/
+
 # misc
 .DS_Store
 *.pem
