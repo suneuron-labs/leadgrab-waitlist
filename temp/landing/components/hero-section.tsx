@@ -42,7 +42,7 @@ export function HeroSection({ onOpenWaitlist }: HeroSectionProps) {
             </Button>
           </div>
 
-          <p className="mt-6 max-w-md text-sm leading-relaxed text-slate-500">
+          <p className="mt-6 text-[0.8625rem] whitespace-nowrap text-slate-500">
             {hero.trustSubtext}
           </p>
         </div>

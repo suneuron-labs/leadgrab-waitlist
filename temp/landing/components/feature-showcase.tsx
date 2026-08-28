@@ -9,7 +9,10 @@ export function FeatureShowcase() {
     <section id="how-it-works" className="w-full scroll-mt-24 py-20">
       <div className="mx-auto max-w-5xl">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">
+          <p className="inline-block rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-400">
+            {showcase.pill}
+          </p>
+          <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">
             {showcase.sectionTitle}
           </h2>
           <p className="mt-4 text-lg text-slate-400">

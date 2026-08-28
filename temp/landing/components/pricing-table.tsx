@@ -84,7 +84,7 @@ export function PricingTable() {
               <CardFooter>
                 <Button
                   type="button"
-                  onClick={() => openWaitlist("pricing")}
+                  onClick={() => openWaitlist(tier.waitlistSource)}
                   className={cn(
                     "h-11 w-full rounded-xl font-semibold",
                     tier.highlighted

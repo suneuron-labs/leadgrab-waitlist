@@ -8,7 +8,10 @@ export function FaqSection() {
     <section id="faq" className="w-full scroll-mt-24 py-20">
       <div className="mx-auto max-w-3xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">
+          <p className="inline-block rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm text-emerald-400">
+            {faq.pill}
+          </p>
+          <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">
             {faq.sectionTitle}
           </h2>
           <p className="mt-4 text-lg text-slate-400">

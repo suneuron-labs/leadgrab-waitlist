@@ -1,5 +1,8 @@
 import { copy } from "@/lib/copy";
-import type { WaitlistFormData } from "@/lib/validators";
+import {
+  getIntendedPlan,
+  type WaitlistFormData,
+} from "@/lib/validators";
 
 export type SubmitWaitlistResult =
   | { success: true }
@@ -19,6 +22,8 @@ export async function submitWaitlistClient(
 
   const { email, source } = data;
   const name = email.split("@")[0] ?? "Beta User";
+  const ctaSource = source ?? "direct";
+  const intendedPlan = getIntendedPlan(source);
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -32,16 +37,18 @@ export async function submitWaitlistClient(
         name,
         email,
         replyto: email,
-        subject: `WA LeadGrab Beta Waitlist (${source ?? "direct"})`,
+        subject: `WA LeadGrab Beta Waitlist — ${ctaSource}`,
         from_name: "WA LeadGrab Landing",
         message: [
           "New beta waitlist signup",
           "",
           `Email: ${email}`,
-          `CTA source: ${source ?? "direct"}`,
+          `CTA source: ${ctaSource}`,
+          `Intended plan: ${intendedPlan}`,
           `Submitted at: ${new Date().toISOString()}`,
         ].join("\n"),
-        cta_source: source ?? "direct",
+        cta_source: ctaSource,
+        intended_plan: intendedPlan,
       }),
     });
 

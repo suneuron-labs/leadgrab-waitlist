@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { WaitlistModal } from "@/components/waitlist-modal";
 import { WaitlistProvider } from "@/components/waitlist-context";
 import type { WaitlistSource } from "@/lib/validators";
+import { WAITLIST_SOURCES } from "@/lib/validators";
 
 type LandingShellProps = {
   children: React.ReactNode;
@@ -29,8 +30,12 @@ export function LandingShell({ children }: LandingShellProps) {
 
   return (
     <WaitlistProvider onOpen={handleOpenWaitlist}>
-      <Navbar onOpenWaitlist={() => handleOpenWaitlist("navbar")} />
-      <HeroSection onOpenWaitlist={() => handleOpenWaitlist("hero")} />
+      <Navbar
+        onOpenWaitlist={() => handleOpenWaitlist(WAITLIST_SOURCES.heroCta)}
+      />
+      <HeroSection
+        onOpenWaitlist={() => handleOpenWaitlist(WAITLIST_SOURCES.heroCta)}
+      />
       {children}
       <WaitlistModal
         open={modalOpen}

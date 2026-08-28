@@ -1,3 +1,4 @@
+import { ClosingCtaBanner } from "@/components/closing-cta-banner";
 import { FaqSection } from "@/components/faq-section";
 import { FeatureShowcase } from "@/components/feature-showcase";
 import { Footer } from "@/components/footer";
@@ -14,6 +15,7 @@ export default function Home() {
           <FeatureShowcase />
           <PricingTable />
           <FaqSection />
+          <ClosingCtaBanner />
         </main>
       </LandingShell>
 

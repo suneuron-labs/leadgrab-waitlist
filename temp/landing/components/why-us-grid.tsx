@@ -44,7 +44,17 @@ export function WhyUsGrid() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base leading-relaxed text-slate-400">
-                    {card.description}
+                    {"codeCallout" in card && card.codeCallout ? (
+                      <>
+                        {card.description}{" "}
+                        <code className="rounded-md border border-red-500/30 bg-red-500/10 px-1.5 py-0.5 font-mono text-[0.9em] font-medium text-red-300">
+                          {card.codeCallout}
+                        </code>
+                        .
+                      </>
+                    ) : (
+                      card.description
+                    )}
                   </CardDescription>
                 </CardContent>
               </Card>

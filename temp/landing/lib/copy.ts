@@ -1,3 +1,5 @@
+import { WAITLIST_SOURCES } from "@/lib/validators";
+
 export const copy = {
   meta: {
     title: "WA LeadGrab — Export WhatsApp Contacts to Excel",
@@ -13,7 +15,7 @@ export const copy = {
       { label: "Pricing", href: "#pricing" },
       { label: "FAQ", href: "#faq" },
     ],
-    cta: "Get Early Access",
+    cta: "Join Early Beta",
   },
 
   hero: {
@@ -22,9 +24,9 @@ export const copy = {
     headlineAccent: "Clean Excel",
     subheading:
       "Stop copying phone numbers one by one. Grab group members, unsaved numbers, and business chats with pristine formatting, proper country codes, and zero scientific notation errors.",
-    cta: "Add to Chrome — Free Beta",
+    cta: "Join Early Beta",
     trustSubtext:
-      "⭐ Free 50-contact trial • In-browser privacy (no data stored) • Manifest V3 safe",
+      "⭐ Free 50-contact trial • 100% In-Browser Privacy • Zero Setup Required",
     mockup: {
       contactsDetected: "428 contacts detected",
       exportButton: "Export to Excel",
@@ -39,7 +41,8 @@ export const copy = {
       {
         title: "No More Scrambled Numbers",
         description:
-          "Auto country-code formatting keeps every number export-ready — no Excel scientific notation bugs like +6.5912E+11.",
+          "Auto country-code formatting keeps every number export-ready — no Excel scientific notation bugs like",
+        codeCallout: "+6.5912E+11",
       },
       {
         title: "Selective Pre-Export Filtering",
@@ -47,17 +50,18 @@ export const copy = {
           "1-click admin exclusion and custom member checkmarks so you only export the contacts you actually need.",
       },
       {
-        title: "Always Up-to-Date",
+        title: "Zero-Break Guarantee",
         description:
-          "We commit to hotfixes within 24 hours of WhatsApp Web UI updates so your exports never break mid-campaign.",
+          "We guarantee hotfixes within 24 hours of WhatsApp Web UI updates — so your exports never break mid-campaign.",
       },
     ],
   },
 
   showcase: {
-    sectionTitle: "See the Difference",
+    pill: "3-STEP WORKFLOW",
+    sectionTitle: "How It Works",
     sectionSubtitle:
-      "Compare a typical copy-paste export against a WA LeadGrab sheet — formatted, split, and ready for CRM import.",
+      "1. Open group → 2. Preview & filter members → 3. Export CRM-ready sheet.",
     rawDump: {
       title: "Raw contact dump",
       rows: [
@@ -106,10 +110,11 @@ export const copy = {
         features: [
           "First 50 contacts lifetime",
           "Standard CSV export",
-          "Basic formatting",
+          "Clean Country-Code Formatting",
         ],
-        cta: "Get Access",
+        cta: "Join Early Beta",
         highlighted: false,
+        waitlistSource: WAITLIST_SOURCES.freeTrial,
       },
       {
         name: "Pro Monthly",
@@ -123,17 +128,24 @@ export const copy = {
           "Excel (.xlsx) & vCard support",
           "Priority hotfixes",
         ],
-        cta: "Get Access",
+        cta: "Join Early Beta",
         highlighted: true,
+        waitlistSource: WAITLIST_SOURCES.proMonthly,
       },
       {
         name: "Pro Annual",
         price: "$89",
         period: "/yr",
         badge: "38% annual discount",
-        features: ["Everything in Pro"],
-        cta: "Get Access",
+        features: [
+          "Everything in Pro Monthly",
+          "2 Months Free (Save 38%)",
+          "Lifetime Price Lock Guarantee",
+          "Dedicated 1-on-1 Support",
+        ],
+        cta: "Join Early Beta",
         highlighted: false,
+        waitlistSource: WAITLIST_SOURCES.proAnnual,
       },
     ],
   },
@@ -142,8 +154,8 @@ export const copy = {
     title: "Join the Next WA LeadGrab Batch",
     description:
       "We are onboarding users in batches of 50 to maintain stability with recent WhatsApp Web releases. Enter your email to receive your access link and Chrome Store invite.",
-    emailPlaceholder: "Work email",
-    submitButton: "Request Beta Invite",
+    emailPlaceholder: "Your email",
+    submitButton: "Join Early Beta",
     successMessage:
       "You're on the list! Check your inbox for a confirmation email.",
     errorMessage: "Something went wrong. Please try again.",
@@ -185,10 +197,16 @@ export const copy = {
   },
 
   faq: {
+    pill: "GOT QUESTIONS?",
     sectionTitle: "FAQ",
     sectionSubtitle:
       "Common questions about the private beta and how WA LeadGrab works.",
     items: [
+      {
+        question: "Will using this get my WhatsApp account banned?",
+        answer:
+          "No. WA LeadGrab only reads visible text directly from your open WhatsApp Web tab using standard browser DOM APIs. It never sends automated messages, spams contacts, or interacts with WhatsApp's unofficial API.",
+      },
       {
         question: "Is WA LeadGrab free to try?",
         answer:
@@ -212,9 +230,17 @@ export const copy = {
     ],
   },
 
+  closingCta: {
+    headline: "Ready to stop copy-pasting numbers manually?",
+    subheadline:
+      "Join the private beta. First 50 export credits are completely free.",
+    cta: "Join Early Beta",
+  },
+
   footer: {
     product: "WA LeadGrab",
     tagline: "Clean WhatsApp exports for sales teams.",
-    copyright: "© Suneuron Pte. Ltd. All rights reserved 2026",
+    copyright:
+      "© 2026 Suneuron Pte. Ltd. All rights reserved. WA LeadGrab is an independent tool and is not affiliated with, endorsed by, or sponsored by WhatsApp LLC or Meta Platforms, Inc.",
   },
 } as const;
