@@ -1,6 +1,6 @@
-# Product Landing Handoff — Overview
+# Product Landing Handoff — LeadGrab (Example)
 
-Artifacts in this folder guide copying the **WA LeadGrab waitlist** look and feel into the **future product landing page** (in the `leadgrab` / `wa-leadgrab` product repo).
+This folder is the **project-specific instance** of the generic handoff process in `.cursor/templates/product-handoff.md`.
 
 ## Files in this folder
 

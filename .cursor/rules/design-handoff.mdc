@@ -6,31 +6,23 @@ globs: app/**/*.tsx,components/**/*.tsx,lib/copy.ts
 
 # Design Handoff — Waitlist → Product Landing
 
-This repo (`leadgrab-waitlist`) is the **design source of truth** for marketing UI until the product app exists.
+This repo is the **design source of truth** until the product app exists.
 
-## When building the product landing page
+## Generic process
 
-1. Read **all files** in `.cursor/rules/product-landing-handoff/` before writing UI code.
-2. Clone or reference this repo at tag `design-v1` (or latest `main` if no tag yet).
-3. Copy files marked **COPY AS-IS** in `file-manifest.md` first (theme, UI primitives, assets).
-4. Copy files marked **ADAPT** and follow `cta-migration.md` + `page-structure.md`.
-5. Do **not** copy waitlist-only files (modal, form, API route, Web3Forms/Resend).
-6. Keep product copy in the product repo's `lib/copy.ts`, seeded from this repo's `lib/copy.ts`.
+Read `.cursor/templates/product-handoff.md` first — applies to all waitlist → product migrations.
 
-## Repo relationship
+## This project
+
+1. Read **all files** in `.cursor/rules/product-landing-handoff/`
+2. Reference this repo at tag `design-v1`
+3. Copy **COPY AS-IS** files from `file-manifest.md`
+4. **Adapt** marketing sections per `cta-migration.md` + `page-structure.md`
+5. **Do not copy** waitlist modal, form, Web3Forms, or Resend integration
 
 | Repo | Role |
 |------|------|
-| `leadgrab-waitlist` (this) | Waitlist validation site — frozen design reference |
-| `leadgrab` / `wa-leadgrab` (future) | Product app + extension — receives borrowed UI |
+| `leadgrab-waitlist` (this) | Waitlist validation — design reference |
+| `leadgrab` (future) | Product app — receives borrowed UI |
 
-## Stable design snapshot
-
-After visual polish on this waitlist site, tag it:
-
-```bash
-git tag design-v1
-git push origin design-v1
-```
-
-Use that tag when copying into the product repo so both sides match.
+Tag stable design: `git tag design-v1 && git push origin design-v1`

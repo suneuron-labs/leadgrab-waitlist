@@ -68,7 +68,9 @@ All CTAs open the private-beta waitlist modal → Web3Forms (lead to you) + Rese
 
 ## Design handoff
 
-Copy and design tokens for the future product landing page live in `.cursor/rules/product-landing-handoff/`. Tag a stable design snapshot before major visual changes:
+Generic process: `.cursor/templates/product-handoff.md`
+
+Project-specific handoff docs: `.cursor/rules/product-landing-handoff/`. Tag a stable design snapshot before major visual changes:
 
 ```bash
 git tag design-v1

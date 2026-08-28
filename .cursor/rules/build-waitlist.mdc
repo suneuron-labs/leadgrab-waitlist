@@ -1,0 +1,27 @@
+---
+description: Build a waitlist validation page when user says "build the waitlist" with a spec
+alwaysApply: true
+---
+
+# Build Waitlist
+
+When the user says **"build the waitlist"** (with or without a spec file):
+
+1. Read `.cursor/WAITLIST-BUILD.md` — master playbook
+2. Read the user's spec in `.cursor/spec/*.md` (exclude `waitlist-spec.template.md` unless that's all they provided)
+3. Follow templates in `.cursor/templates/` for design, architecture, sections, plumbing
+4. Use this repo as the reference implementation for component patterns
+
+## Defaults
+
+- Standalone Next.js app at **repo root** (not `temp/`)
+- Dark slate + emerald accent (override per spec)
+- All copy in `lib/copy.ts`
+- Web3Forms + Resend waitlist plumbing (standard)
+- Generate `.cursor/rules/product-landing-handoff/` for future product app
+- Tag `design-v1` after first successful build
+- Never start/stop dev server
+
+## This is validation only
+
+Do not build product features. The real app is a separate repo that will borrow this design later (see `.cursor/templates/product-handoff.md`).

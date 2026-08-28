@@ -15,8 +15,14 @@ out/
 # production
 build/
 
-# cursor — commit rules only; keep specs/plans local
+# cursor — commit playbook, templates, specs; keep other IDE config local
 .cursor/*
+!.cursor/README.md
+!.cursor/WAITLIST-BUILD.md
+!.cursor/spec/
+!.cursor/spec/**
+!.cursor/templates/
+!.cursor/templates/**
 !.cursor/rules/
 !.cursor/rules/**
 
