@@ -49,23 +49,6 @@ export function WaitlistForm({ source }: WaitlistFormProps) {
       return;
     }
 
-    const confirmResponse = await fetch("/api/waitlist-confirm", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    if (!confirmResponse.ok) {
-      const confirmResult = (await confirmResponse.json()) as {
-        error?: string;
-      };
-      setSubmitError(
-        confirmResult.error ??
-          "You're on the list, but we couldn't send a confirmation email.",
-      );
-      return;
-    }
-
     setSubmitted(true);
   };
 

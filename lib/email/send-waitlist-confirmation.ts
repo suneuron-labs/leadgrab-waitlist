@@ -3,19 +3,21 @@ import { copy } from "@/lib/copy";
 
 type SendWaitlistConfirmationParams = {
   email: string;
-  source?: string;
 };
+
+type SendWaitlistConfirmationResult =
+  | { success: true }
+  | { success: false; error: string };
 
 export async function sendWaitlistConfirmation({
   email,
-  source,
-}: SendWaitlistConfirmationParams) {
+}: SendWaitlistConfirmationParams): Promise<SendWaitlistConfirmationResult> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
 
   if (!apiKey || !from) {
     return {
-      success: false as const,
+      success: false,
       error: "Confirmation email is not configured.",
     };
   }
@@ -34,10 +36,10 @@ export async function sendWaitlistConfirmation({
 
   if (error) {
     return {
-      success: false as const,
+      success: false,
       error: error.message ?? copy.modal.errorMessage,
     };
   }
 
-  return { success: true as const };
+  return { success: true };
 }

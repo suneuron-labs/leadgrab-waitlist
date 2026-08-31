@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendWaitlistConfirmation } from "@/lib/email/send-waitlist-confirmation";
+import { sendWaitlistEmails } from "@/lib/email/send-waitlist-emails";
 import { waitlistSchema } from "@/lib/validators";
 
 export async function POST(request: Request) {
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await sendWaitlistConfirmation(parsed.data);
+  const result = await sendWaitlistEmails(parsed.data);
 
   if (!result.success) {
     return NextResponse.json(
